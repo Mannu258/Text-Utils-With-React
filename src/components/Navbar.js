@@ -1,26 +1,30 @@
 import React, { useState } from 'react'
-
+import Alert from './Alert'
 
 export default function Navbar(props) {
   const [mystyle, setMystyle] = useState({
     color: 'white',
     backgroundColor: 'black'
   })
-  const [mode,setmode] = useState("Enable Dark Mode")
-  const [boot,setboot] = useState("navbar navbar-expand-lg navbar-light bg-light")
+  const [mode, setmode] = useState("Enable Dark Mode")
+  const [boot, setboot] = useState("navbar navbar-expand-lg navbar-light bg-light")
+  const [popup,setpopup] =useState("White Mode is on")
 
   const togglestyle = () => {
-    if(mode === "Enable Dark Mode"){
+    if (mode === "Enable Dark Mode") {
       setmode("Enable Light Mode")
       document.body.style.backgroundColor = "black";
       document.body.style.color = "white";
       setboot("navbar navbar-expand-lg navbar-dark bg-dark")
+      setpopup("Dark Mode is on")
     }
-    else{
+    else {
       setmode("Enable Dark Mode")
       document.body.style.backgroundColor = "white";
       document.body.style.color = "black";
       setboot("navbar navbar-expand-lg navbar-white bg-white")
+      setpopup("White Mode is on")
+
 
     }
     if (mystyle.color === 'white') {
@@ -29,7 +33,7 @@ export default function Navbar(props) {
         backgroundColor: 'white'
       }
       )
-      
+
     } else {
       setMystyle({
         color: 'white',
@@ -41,8 +45,7 @@ export default function Navbar(props) {
   }
   return (
     <>
-
-<nav class={boot}>
+      <nav className={boot}>
         <div className="container-fluid">
           <a className="navbar-brand" href="/">{props.Navbar}</a>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -70,10 +73,7 @@ export default function Navbar(props) {
           </div>
         </div>
       </nav>
-
-
-
-
+      <Alert hello={popup}/>
     </>
   )
 }
