@@ -57,6 +57,7 @@ export default function Textform(props) {
             <div className="mb-3 text-center">
                 <label htmlFor="exampleFormControlTextarea1" className="form-label">{props.label}</label>
                 <textarea className="form-control" onChange={handleChange} value={text} id="exampleFormControlTextarea1" rows="3"></textarea>
+                
                 <button type="button" onClick={Uppercase} className='btn btn-primary m-2'>Uppercase</button>
                 <button type="button" onClick={Lowercase} className='btn btn-primary m-2'>Lowercase</button>
                 <button type="button" onClick={Count} className='btn btn-primary m-2'>Count</button>

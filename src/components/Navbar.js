@@ -10,6 +10,26 @@ export default function Navbar(props) {
   const [boot, setboot] = useState("navbar navbar-expand-lg navbar-light bg-light")
   const [popup,setpopup] =useState("White Mode is on")
 
+  const yellow = () =>{
+    document.body.style.backgroundColor = "yellow";
+      document.body.style.color = "white";
+  }
+  const red = () =>{
+    document.body.style.backgroundColor = "red";
+      document.body.style.color = "white";
+  }
+  const blue = () =>{
+    document.body.style.backgroundColor = "blue";
+      document.body.style.color = "white";
+  }
+  
+  const [inputValue, setInputValue] = useState('white');
+  const inputcolor = (event) =>{
+    setInputValue(event.target.value)
+    document.body.style.backgroundColor = event.target.value;
+  }
+
+
   const togglestyle = () => {
     if (mode === "Enable Dark Mode") {
       setmode("Enable Light Mode")
@@ -62,11 +82,23 @@ export default function Navbar(props) {
               <li className="nav-item">
                 <a className="nav-link active" aria-current="page" href="/">{props.Service}</a>
               </li>
+              <li className="nav-item">
+                <button className="nav-link active btn btn-warning" onClick={yellow} aria-current="page" href="/">Yellow</button>
+              </li>
+              <li className="nav-item">
+              <button className="nav-link active btn btn-danger" onClick={red} aria-current="page" href="/">Red</button>
+              </li>
+              <li className="nav-item">
+                <button className="nav-link active btn btn-primary" onClick={blue} aria-current="page" href="/">Blue</button>
+              </li>
+
             </ul>
             <form className="d-flex" role="search">
               <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-              <button className="btn btn-outline-success" type="submit">Search</button>
+              <button className="btn btn-outline-success" type="submit">Search</button>&nbsp;&nbsp;&nbsp;
             </form>
+            <input type="color" id="favcolor" aria-label="Select a color" value={inputValue} onChange={inputcolor}/>&nbsp;&nbsp;&nbsp;&nbsp;
+
             <div className="d-flex" role="search">
               <button className="btn btn-outline-success ml-3" style={mystyle} onClick={togglestyle} type="submit">{mode}</button>
             </div>
