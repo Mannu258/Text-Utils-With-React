@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="name"></h1>
+    <script>
+        var i = 0; // Initialize outside of the setInterval function
+const intervalId = setInterval(() => {
+    document.getElementById('name').textContent = i;
+    i++; // Increment i by 1
+    if (i > 500) { // Stop the interval after reaching 500
+        clearInterval(intervalId);
+    }
+}, 10);
+        
+
+    </script>
+</body>
+
+</html>

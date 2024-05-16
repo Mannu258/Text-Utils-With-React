@@ -16,7 +16,7 @@ function App() {
     <Navbar Navbar="TextUtils" Home="Home" About="About" Service="Service"/>
     <BrowserRouter>
         <Routes> {/* Use Routes here */}
-          <Route exact path="/" element={<Textform label="ENTER THE TEXT TO ANALYZE"/>} />
+          <Route path="/" element={<Textform label="ENTER THE TEXT TO ANALYZE"/>} />
           <Route path="/about" element={<About/>} />
           <Route path="/service" element={<Service/>} />
 
