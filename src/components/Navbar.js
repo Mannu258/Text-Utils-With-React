@@ -77,10 +77,10 @@ export default function Navbar(props) {
                 <a className="nav-link active" aria-current="page" href="/">{props.Home}</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="/">{props.About}</a>
+                <a className="nav-link active" aria-current="page" href="/about">{props.About}</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="/">{props.Service}</a>
+                <a className="nav-link active" aria-current="page" href="/service">{props.Service}</a>
               </li>
               <li className="nav-item">
                 <button className="nav-link active btn btn-warning" onClick={yellow} aria-current="page" href="/">Yellow</button>
